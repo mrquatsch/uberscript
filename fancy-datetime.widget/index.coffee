@@ -96,7 +96,7 @@ style: """
     position: relative
     display: table
     height: 100%
-    padding: 1rem 4rem
+    padding: 1rem 4.5rem
     border-radius: 1rem
     background: #{ @settings.colors.background }
     box-shadow: #{ @settings.shadows.box }
