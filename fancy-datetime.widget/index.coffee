@@ -21,7 +21,7 @@ settings =
       default: 'rgba(0, 0, 0, .75)'
       accent: 'rgba(255, 255, 255, .75)'
       background: 'rgba(255, 255, 255, .1)'
-      color2: 'rgba(75, 75, 150, .75)'
+      color2: '#737373'
     shadows:
       box: '0 0 1.25em rgba(0, 0, 0, .5)'
       text: '0 0 0.625em rgba(0, 0, 0, .25)'
