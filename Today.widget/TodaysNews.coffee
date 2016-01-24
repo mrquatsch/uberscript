@@ -41,7 +41,10 @@ showStory: (theItem,dom,win)->
 
   # Get the title and the description from the item.
   theTitle = theItem.find('title')[win.todaysNewsCurrentStory].childNodes[0].data.split(':')
-  theLink = theItem.find('link')[win.todaysNewsCurrentStory]
+  # For the Reddit news feed, this gives me the comments section
+  #theLink = theItem.find('link')[win.todaysNewsCurrentStory].childNodes[0].textContent
+  # This gives me the originating link
+  theLink = theItem.find('description')[win.todaysNewsCurrentStory].childNodes[3].getAttribute('href')
   theDate = theItem.find('pubDate')[win.todaysNewsCurrentStory].childNodes[0].data
 
   # Convert the date to the local timezone.
@@ -49,14 +52,7 @@ showStory: (theItem,dom,win)->
   
   # Output the variables.
   dom.find(title).html(theTitle)
-
-  ## This one links to 127.0.0.1/%5Bobject%20Element%5D
-  #dom.find(link).html("<a href=\"" + theLink + "\">ReadMore</a>") #
-  ## Prints the url, but I want to encapsulate it inside of an href
-  #dom.find(link).html(theLink) 
-  ## This one links back to 127.0.0.1
-  #dom.find(link).html("<a href=\"#theLink\">ReadMore</a>")
-  
+  dom.find(link).html("<a href=\"" + theLink + "\">ReadMore</a>")
   dom.find(footer).html(theDate + '   (Story ' + win.todaysNewsCurrentStory + ' of ' + win.todaysNewsMaxStories + ')')
   
 # CSS Style
